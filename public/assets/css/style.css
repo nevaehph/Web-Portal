@@ -1,0 +1,94 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: table;
+    font-weight: 100;
+    font-family: 'Lato';
+    background-color:rgba(239, 239, 239, 0.57);
+}
+
+.container {
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.content {
+    text-align: center;
+    display: inline-block;
+}
+
+.title {
+    font-size: 96px;
+}
+
+.top-bar{
+    height: 100px;
+    background-color: #c5c5c5;
+    width: 100%;
+}
+.side-bar{
+    float: left;
+}
+.dashboard-title{
+    float: left;
+    font-weight: bold;
+    font-size: 1.4em;
+    padding: 10px;
+    margin-top: 53px;
+}
+.welcome-msg{
+    float: right;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+}
+.logout-btn{
+    float: right;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+}
+.logout-btn:hover{
+    text-decoration: underline;
+}
+.side-classroom{
+    margin-left: 10px;
+    margin-top: 10px;
+    background-color: #a6c2ff;
+    padding: 10px;
+    width: 200px;
+    border-radius: 5px;
+}
+.side-classroom .header{
+    border-bottom: 1px black solid;
+}
+.side-classroom ul{
+    padding:10px;
+    margin: 0px;
+}
+.side-classroom ul li{
+    padding:3px;
+    list-style-type: none;
+    cursor:pointer;
+}
+.side-classroom ul li:hover{
+    background-color:#7286b3;
+}
+.add-classroom{
+    float:right;
+    cursor:pointer;
+}
+.content-box{
+    margin-left: 250px;
+    margin-top: 10px;
+    height: 1000px;
+    background-color: #e6e3e3;
+    border-radius: 5px;
+    padding: 10px;
+}
