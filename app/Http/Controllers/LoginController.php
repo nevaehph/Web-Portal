@@ -23,6 +23,7 @@ class LoginController extends Controller
                 "password" => $request->input("password")
             ]
         ]);
-        return view('/dashboard', ["session" => trim($response, "\"")]);
+        $request->session()->put('sessionToken', trim($response, "\""));
+        return view('/dashboard');
     }
 }
