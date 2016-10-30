@@ -75,14 +75,14 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar" id="classroomList" data-session="{{$session}}">
+          <ul class="nav nav-sidebar" id="classroomList" data-session="{{Session::get('sessionToken')}}">
             <li>
                 <h4 style="margin-left:10px">Classroom(s)</h4>
             </li>
             <li id="newClassroom"><a class="add-classroom" href="#">Add a Classroom +</a></li>
           </ul>
 
-          <ul class="nav nav-sidebar" id="topicList" data-session="{{$session}}">
+          <ul class="nav nav-sidebar" id="topicList" data-session="{{Session::get('sessionToken')}}">
             <li>
                 <h4 style="margin-left:10px">Chapter(s)</h4>
             </li>
