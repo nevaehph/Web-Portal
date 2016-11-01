@@ -23,10 +23,6 @@ Route::get('/classroom', function(){
 	return view('classroom');
 });
 
-Route::post('/deleteClassroom', 'ClassroomController@deleteClassroom');
-
-Route::post('/editClassroom', 'ClassroomController@editClassroom');
-
 Route::get('/chapter', function(){
 	return view('chapter');
 });
