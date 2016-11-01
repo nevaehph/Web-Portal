@@ -23,10 +23,20 @@ Route::get('/classroom', function(){
 	return view('classroom');
 });
 
+Route::post('/deleteClassroom', 'ClassroomController@deleteClassroom');
+
+Route::post('/editClassroom', 'ClassroomController@editClassroom');
+
 Route::get('/chapter', function(){
 	return view('chapter');
 });
 
 Route::post('/doLogin', 'LoginController@login');
 
+Route::get('/performanceReport', function(){
+	return view('performanceReport');
+});
 
+Route::get('/performanceReportDetail', function(){
+	return view('performanceReportDetail');
+});
