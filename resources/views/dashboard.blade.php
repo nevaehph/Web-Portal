@@ -15,9 +15,40 @@
     <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.12/datatables.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="{{ URL::asset('assets/js/bootstrap.min.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/loadingoverlay.min.js') }}"></script>
     <script>
         $(document).ready(function() {
             $('#table').DataTable();
+
+            $.ajax({
+              method: "POST",
+              url: 'http://spapi.t05.sg/portal/getClassrooms',
+              data: {
+                "teacherId": "teacher",
+                "sessionToken": $('#classroomList').data('session')
+              },
+              success: function(data) {
+                $.each(JSON.parse(data), function(index, value) {
+                  console.log(value.name);
+                  $("#newClassroom").before("<li><a href=\"#\">" + value.name + "</a></li>");
+                });
+              }
+            })
+
+            $.ajax({
+              method: "POST",
+              url: 'http://spapi.t05.sg/portal/getTopics',
+              data: {
+                "teacherId": "teacher",
+                "sessionToken": $('#topicList').data('session')
+              },
+              success: function(data) {
+                $.each(JSON.parse(data), function(index, value) {
+                  console.log(value.name);
+                  $("#topicList").append("<li><a href=\"#\">" + value.name + "</a></li>");
+                });
+              }
+            })
         } );
     </script>
   </head>
@@ -44,23 +75,17 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
+          <ul class="nav nav-sidebar" id="classroomList" data-session="{{Session::get('sessionToken')}}">
             <li>
                 <h4 style="margin-left:10px">Classroom(s)</h4>
             </li>
-            <li><a href="/classroom">Classroom 1</a></li>
-            <li><a href="#">Classroom 2</a></li>
-            <li><a href="#">Classroom 3</a></li>
-            <li><a class="add-classroom" href="#">Add a Classroom +</a></li>
+            <li id="newClassroom"><a class="add-classroom" href="#">Add a Classroom +</a></li>
           </ul>
 
-          <ul class="nav nav-sidebar">
+          <ul class="nav nav-sidebar" id="topicList" data-session="{{Session::get('sessionToken')}}">
             <li>
                 <h4 style="margin-left:10px">Chapter(s)</h4>
             </li>
-            <li><a href="/chapter">Chapter 1</a></li>
-            <li><a href="#">Chapter 2</a></li>
-            <li><a href="#">Chapter 3</a></li>
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">

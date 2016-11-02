@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;;
 
 class LoginController extends Controller
 {
@@ -13,10 +14,16 @@ class LoginController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function login()
+    public function login(Request $request)
     {
     	//Do Login Here
-    	
-        return redirect('/dashboard');
+    	$response = parent::post('login', ['form_params' => 
+            [
+                "teacherId" => $request->input("username"), 
+                "password" => $request->input("password")
+            ]
+        ]);
+        $request->session()->put('sessionToken', trim($response, "\""));
+        return view('/dashboard');
     }
 }
