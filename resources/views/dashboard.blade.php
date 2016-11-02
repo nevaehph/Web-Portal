@@ -93,6 +93,12 @@
           <div style="margin-bottom:30px">
             <h4>Select a tab on the sidebar to begin.</h4>
           </div>
+          +		  
+ +		  <ul class="nav nav-sidebar" id="topicList" data-session="{{Session::get('sessionToken')}}">
+ +            <li>
+ +                <li><a href="#">Classroom Manager</a></li>
+ +            </li>
+ +          </ul>
           <div>
             <h1 class="page-header">Table Format Example</h1>
 
