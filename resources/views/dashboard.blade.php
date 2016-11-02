@@ -87,6 +87,12 @@
                 <h4 style="margin-left:10px">Chapter(s)</h4>
             </li>
           </ul>
+		  
+		  <ul class="nav nav-sidebar" id="topicList" data-session="{{Session::get('sessionToken')}}">
+            <li>
+                <li><a href="#">Classroom Manager</a></li>
+            </li>
+          </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">Welcome</h1>
