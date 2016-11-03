@@ -78,7 +78,7 @@
             <li>
                 <h4 style="margin-left:10px">Classroom(s)</h4>
             </li>
-            <li id="newClassroom"><a class="add-classroom" href="#">Add a Classroom +</a></li>
+            <li id="newClassroom"><a class="add-classroom" data-toggle="modal" data-target="#newClassRoomModal">Add a Classroom +</a></li>
           </ul>
 
           <ul class="nav nav-sidebar" id="topicList" data-session="{{Session::get('sessionToken')}}">
@@ -100,5 +100,31 @@
         @yield('content')
       </div>
     </div>
+    
+    <!-- New classroom modal -->
+	<div class="modal fade" id="newClassRoomModal">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			  <span aria-hidden="true">&times;</span>
+			</button>
+			<h4 class="modal-title">Add a new classroom</h4>
+		  </div>
+		  <div class="modal-body">
+			<form method="post">
+			<label for="classRoomName" class="form-control-label">Classroom name</label>
+			<input class="form-control" id="classRoomName"name="classroom" required>
+			</form>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			<button type="button" class="btn btn-primary">Save changes</button>
+		  </div>
+		</div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+	<!--End new classroom modal -->
+    
   </body>
 </html>
