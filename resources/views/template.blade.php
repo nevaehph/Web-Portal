@@ -50,6 +50,12 @@
           })
       });
     </script>
+    <script>
+		function retrieveNewClassData(){
+			classroomName = $("#newClassRoomModal #classRoomName").val();	
+			$("#classroomList").append("<li><a class=\"add-classroom\" href=\"#\">" + classroomName + "</a></li>");	
+		}
+    </script>
   </head>
   <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -111,16 +117,15 @@
 			</button>
 			<h4 class="modal-title">Add a new classroom</h4>
 		  </div>
-		  <div class="modal-body">
-			<form method="post">
-			<label for="classRoomName" class="form-control-label">Classroom name</label>
-			<input class="form-control" id="classRoomName"name="classroom" required>
-			</form>
-		  </div>
-		  <div class="modal-footer">
-			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-			<button type="button" class="btn btn-primary">Save changes</button>
-		  </div>
+			  <div class="modal-body">
+				<form method="post" action="template.blade.php">
+				<label for="classRoomName" class="form-control-label">Classroom name</label>
+				<input class="form-control" id="classRoomName" name="classroom" required>
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+				<button type="button" onclick="retrieveNewClassData()" data-dismiss="modal" class="btn btn-primary">Add Classroom</button>
+			  </div>
 		</div><!-- /.modal-content -->
 	  </div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
