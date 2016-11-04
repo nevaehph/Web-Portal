@@ -29,7 +29,7 @@
             success: function(data) {
               $.each(JSON.parse(data), function(index, value) {
                 console.log(value.name);
-                $("#newClassroom").before("<li><a href=\"/classroom\">" + value.name + "</a></li>");
+                $("#newClassroom").before("<li class=\"classrooms\"><a  href=\"/classroom\">" + value.name + "</a></li>");
               });
             }
           })
@@ -51,25 +51,27 @@
       });
     </script>
     <script>
+		
 		function retrieveNewClassData(){
-			classroomName = $("#newClassRoomModal #classRoomName").val();	
-			$("#classroomList").append("<li><a href=\"/classroom\">" + classroomName + "</a></li>");	
+			//Gets name from modal
+			var classroomName = $("#newClassRoomModal #classRoomName").val();
+			var flag = true;
 			
-			/*
-			//THIS IS THE IMPORTANT PART
-			$.ajax({
-            method: "POST",
-            url: 'http://spapi.t05.sg/portal/getClassrooms',
-            data: {
-              "teacherId": "teacher",
-              "sessionToken": $('#classroomList').data('session')
-            },
-            success: function(data) {
-              $.each(JSON.parse(data), function(index, value) {
-                console.log(value.name);
-                $("#newClassroom").before("<li><a href=\"/classroom\">" + value.name + "</a></li>");
-              });
-			*/
+			//If a classroom with that name already exists, triggers an alert
+			$("li.classrooms").each(function(){
+				var text = $(this).text();
+				var sameName = classroomName === text;
+				if (sameName) {
+					alert("A classroom with the name " + text + " already exists, please choose a different name");
+					flag = false;
+				}
+			});
+			
+			//Adds new classroom if name is not already used
+			if (flag) {
+				$("#classroomList").append("<li class=\"classrooms\"><a  href=\"/classroom\">" + classroomName + "</a></li>");	
+				$("#newClassRoomModal").modal('toggle');
+			}
 		}
     </script>
   </head>
@@ -140,7 +142,7 @@
 			  </div>
 			  <div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-				<button type="button" onclick="retrieveNewClassData()" data-dismiss="modal" class="btn btn-primary">Add Classroom</button>
+				<button type="button" onclick="retrieveNewClassData()" class="btn btn-primary">Add Classroom</button>
 			  </div>
 		</div><!-- /.modal-content -->
 	  </div><!-- /.modal-dialog -->
