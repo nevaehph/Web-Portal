@@ -53,7 +53,23 @@
     <script>
 		function retrieveNewClassData(){
 			classroomName = $("#newClassRoomModal #classRoomName").val();	
-			$("#classroomList").append("<li><a class=\"add-classroom\" href=\"#\">" + classroomName + "</a></li>");	
+			$("#classroomList").append("<li><a href=\"/classroom\">" + classroomName + "</a></li>");	
+			
+			/*
+			//THIS IS THE IMPORTANT PART
+			$.ajax({
+            method: "POST",
+            url: 'http://spapi.t05.sg/portal/getClassrooms',
+            data: {
+              "teacherId": "teacher",
+              "sessionToken": $('#classroomList').data('session')
+            },
+            success: function(data) {
+              $.each(JSON.parse(data), function(index, value) {
+                console.log(value.name);
+                $("#newClassroom").before("<li><a href=\"/classroom\">" + value.name + "</a></li>");
+              });
+			*/
 		}
     </script>
   </head>
