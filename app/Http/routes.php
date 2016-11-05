@@ -27,12 +27,17 @@ Route::get('/chapter', function(){
 	return view('chapter');
 });
 
-Route::post('/yellow', 'NewClassroomController@fbclick');
-
-Route::get('/yellow', function(){
-	echo "Hello";
+Route::post('/classroomController', function (){
+	echo $_POST['classroomName'];
+	return view('blue');
+	});
+	
+	
+Route::get('/classroomController', function() {
+	echo "Steven Spielberg, your running out of time";
+	return view('blue');
+	
 });
-
 
 
 Route::post('/doLogin', 'LoginController@login');

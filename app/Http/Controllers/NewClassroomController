@@ -1,28 +1,21 @@
 <?php
 	namespace App\Http\Controllers;
+	use App\User;
+	use App\Http\Controllers\Controller;
 
-	class NewClassRoomController extends Controller{
-		public function postClassroom() {
-			echo "<h1> THANK YOU JESUS </h1>";
+	class NewClassroomController extends Controller{		
+		public function updateDatabase(String name){
 			
+			/*$response = parent::post('login', ['form_params' => [
+			"teacherId" => "teacher",
+			"sessionToken" => "123",
+			"name" => name]);
+			*/
+			return view('blue');
 		}
 		
-		public function add(int num1, int num2){
-			echo "<h1> PLEASE GOD </h1>";
-		}
-		
-		public function fbclick() {
-			echo "PLEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASE :( ";
-
-		}
-		public function updateDatabase(){
-		$response = parent::post('login', ['form_params' => 
-				[
-					"teacherId" => "teacher", 
-					"sessionToken" => "123"
-					"name" => //CLASSROOM NAME
-				]
-			);
+		public function updateTest(){
+			return view('blue');
 		}
 	}
 
