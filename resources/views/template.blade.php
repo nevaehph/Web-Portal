@@ -29,7 +29,7 @@
             success: function(data) {
               $.each(JSON.parse(data), function(index, value) {
                 console.log(value.name);
-                $("#newClassroom").before("<li><a href=\"/classroom\">" + value.name + "</a></li>");
+                $("#newClassroom").before("<li><a href=\"#\">" + value.name + "</a></li>");
               });
             }
           })
@@ -44,7 +44,7 @@
             success: function(data) {
               $.each(JSON.parse(data), function(index, value) {
                 console.log(value.name);
-                $("#topicList").append("<li><a href=\"/chapter\">" + value.name + "</a></li>");
+                $("#topicList").append("<li><a href=\"#\">" + value.name + "</a></li>");
               });
             }
           })
@@ -89,7 +89,7 @@
       
           <ul class="nav nav-sidebar">
             <li>
-                <li><a href="#">Classroom Manager</a></li>
+                <li><a href="/classroomManager">Classroom Manager</a></li>
             </li>
           </ul>
         </div>

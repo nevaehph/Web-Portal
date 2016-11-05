@@ -33,7 +33,7 @@ class ClassroomController extends Controller
             $classroomInfo[$i]["name"] = $value->name;
             $i++;
         }
-        return view('/classroom',["classroomInfo" => $classroomInfo]);
+        return view('classroomManager',["classroomInfo" => $classroomInfo]);
     }
 
     public function editClassroom(Request $request)
