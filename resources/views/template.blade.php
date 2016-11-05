@@ -117,6 +117,8 @@
 				
 				{{ Form::label("classroom", null, ['class' => 'form-control-label']) }}
 				{{ Form::text('classroomName', null, ['class' => 'form-control', 'id' => 'classRoomName']) }}
+				<input type="hidden" name = "sessionToken" value = "{{ Session::get('sessionToken') }}"></input>
+				
 			</div>
 			  <div class="modal-footer">
 				  
