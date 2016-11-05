@@ -19,9 +19,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 });
 
-Route::get('/classroom', function(){
-	return view('classroom');
-});
+Route::get('/classroom', 'ClassroomController@getClassroom');
 
 Route::post('/deleteClassroom', 'ClassroomController@deleteClassroom');
 
