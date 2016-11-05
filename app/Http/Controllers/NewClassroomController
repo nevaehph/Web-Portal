@@ -1,0 +1,29 @@
+<?php
+	namespace App\Http\Controllers;
+
+	class NewClassRoomController extends Controller{
+		public function postClassroom() {
+			echo "<h1> THANK YOU JESUS </h1>";
+			
+		}
+		
+		public function add(int num1, int num2){
+			echo "<h1> PLEASE GOD </h1>";
+		}
+		
+		public function fbclick() {
+			echo "PLEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASE :( ";
+
+		}
+		public function updateDatabase(){
+		$response = parent::post('login', ['form_params' => 
+				[
+					"teacherId" => "teacher", 
+					"sessionToken" => "123"
+					"name" => //CLASSROOM NAME
+				]
+			);
+		}
+	}
+
+?>

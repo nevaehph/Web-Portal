@@ -27,6 +27,14 @@ Route::get('/chapter', function(){
 	return view('chapter');
 });
 
+Route::post('/yellow', 'NewClassroomController@fbclick');
+
+Route::get('/yellow', function(){
+	echo "Hello";
+});
+
+
+
 Route::post('/doLogin', 'LoginController@login');
 
 

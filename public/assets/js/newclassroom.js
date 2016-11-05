@@ -16,6 +16,6 @@
 		//Adds new classroom if name is not already used
 		if (flag) {
 			$("#classroomList").append("<li class=\"classrooms\"><a  href=\"/classroom\">" + classroomName + "</a></li>");	
-			$("#newClassRoomModal").modal('toggle');
+			$("#newClassRoomModal").modal('toggle');	
 		}
 	}
