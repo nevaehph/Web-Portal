@@ -16,6 +16,7 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="{{ URL::asset('assets/js/bootstrap.min.js') }}"></script>
     <script src="{{ URL::asset('assets/js/loadingoverlay.min.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/newclassroom.js') }}"></script>
     <script>
       $(document).ready(function() {
           $('#table').DataTable();
@@ -49,30 +50,6 @@
             }
           })
       });
-    </script>
-    <script>
-		
-		function retrieveNewClassData(){
-			//Gets name from modal
-			var classroomName = $("#newClassRoomModal #classRoomName").val();
-			var flag = true;
-			
-			//If a classroom with that name already exists, triggers an alert
-			$("li.classrooms").each(function(){
-				var text = $(this).text();
-				var sameName = classroomName === text;
-				if (sameName) {
-					alert("A classroom with the name " + text + " already exists, please choose a different name");
-					flag = false;
-				}
-			});
-			
-			//Adds new classroom if name is not already used
-			if (flag) {
-				$("#classroomList").append("<li class=\"classrooms\"><a  href=\"/classroom\">" + classroomName + "</a></li>");	
-				$("#newClassRoomModal").modal('toggle');
-			}
-		}
     </script>
   </head>
   <body>
