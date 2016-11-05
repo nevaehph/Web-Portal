@@ -27,17 +27,7 @@ Route::get('/chapter', function(){
 	return view('chapter');
 });
 
-Route::post('/classroomController', function (){
-	echo $_POST['classroomName'];
-	return view('blue');
-	});
-	
-	
-Route::get('/classroomController', function() {
-	echo "Steven Spielberg, your running out of time";
-	return view('blue');
-	
-});
+Route::post('classroomController', 'NewClassroomController@postNewClassroom');
 
 
 Route::post('/doLogin', 'LoginController@login');
