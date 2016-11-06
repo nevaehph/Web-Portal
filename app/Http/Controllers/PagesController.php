@@ -16,14 +16,6 @@ class PagesController extends Controller
      * @return Response
      */
     
-        
-    public function getPerformanceReport (){
-		return view('performanceReport');
-	}
-	
-	public function getPerformanceReportDetail (){
-		return view('performanceReportDetail');
-	}
 	
 	public function getlogin (){
 		$classroomInfo = null;
@@ -45,10 +37,6 @@ class PagesController extends Controller
             $i++;
         }		
 		return view('dashboard', ["classroomInfo" => $classroomInfo]);
-	}
-	
-	public function getChapter(){
-		return view('chapter');
 	}
 
 }

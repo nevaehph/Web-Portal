@@ -22,12 +22,9 @@ Route::post('/deleteClassroom', 'ClassroomController@deleteClassroom');
 
 Route::post('/editClassroom', 'ClassroomController@editClassroom');
 
-Route::post('classroomController', 'ClassroomController@postNewClassroom');
+Route::post('/classroomController', 'ClassroomController@postNewClassroom');
 
-Route::get('/chapter', 'PagesController@getChapter');
+Route::get('/topic/{topicId}', 'TopicController@getTopic');
+Route::get('/question/{questionId}', 'TopicController@getQuestion');
 
 Route::post('/doLogin', 'LoginController@login');
-
-Route::get('/performanceReport', 'PagesController@getPerformanceReport');
-
-Route::get('/performanceReportDetail', 'PagesController@getPerformanceReportDetail');

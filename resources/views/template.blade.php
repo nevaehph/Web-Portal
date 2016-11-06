@@ -28,12 +28,7 @@
             },
             success: function(data) {
               $.each(JSON.parse(data), function(index, value) {
-                console.log(value.name);
-<<<<<<< HEAD
-                $("#newClassroom").before("<li class=\"classrooms\"><a  href=\"/classroom\">" + value.name + "</a></li>");
-=======
-                $("#newClassroom").before("<li><a href=\"#\">" + value.name + "</a></li>");
->>>>>>> 842d8ee5ce9e775107aeac2bf65be98b5fa81e80
+                $("#newClassroom").before("<li class=\"classrooms\"><a  href=\"\">" + value.name + "</a></li>");
               });
             }
           })
@@ -48,7 +43,7 @@
             success: function(data) {
               $.each(JSON.parse(data), function(index, value) {
                 console.log(value.name);
-                $("#topicList").append("<li><a href=\"#\">" + value.name + "</a></li>");
+                $("#topicList").append("<li><a href=\"/topic/"+ value.topicId +"\">" + value.name + "</a></li>");
               });
             }
           })
@@ -83,9 +78,6 @@
                 <h4 style="margin-left:10px">Classroom(s)</h4>
             </li>
             <li id="newClassroom"><a class="add-classroom" data-toggle="modal" data-target="#newClassRoomModal">Add a Classroom +</a></li>
-			@foreach($classroomInfo as $classroom)
-            <li><a>{{$classroom['name']}}</a></li>
-			@endforeach
           </ul>
 
           <ul class="nav nav-sidebar" id="topicList" data-session="{{Session::get('sessionToken')}}">
