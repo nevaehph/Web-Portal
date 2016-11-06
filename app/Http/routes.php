@@ -25,9 +25,8 @@ Route::post('/deleteClassroom', 'ClassroomController@deleteClassroom');
 
 Route::post('/editClassroom', 'ClassroomController@editClassroom');
 
-Route::get('/chapter', function(){
-	return view('chapter');
-});
+Route::get('/topic/{topicId}', 'TopicController@getTopic');
+Route::get('/question/{questionId}', 'TopicController@getQuestion');
 
 Route::post('/doLogin', 'LoginController@login');
 

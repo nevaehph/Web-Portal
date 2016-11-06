@@ -44,7 +44,7 @@
             success: function(data) {
               $.each(JSON.parse(data), function(index, value) {
                 console.log(value.name);
-                $("#topicList").append("<li><a href=\"#\">" + value.name + "</a></li>");
+                $("#topicList").append("<li><a href=\"/topic/" + value.topicId + "\">" + value.name + "</a></li>");
               });
             }
           })
