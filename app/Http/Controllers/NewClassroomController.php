@@ -10,7 +10,7 @@
 		public function postNewClassroom(){
 			$name = $_POST['classroomName'];
 			$sessionToken = $_POST['sessionToken'];
-			$response = parent::post('createClassroom', ['form_params' => [
+			$response = parent::post('getClassrooms', ['form_params' => [
 			"teacherId" => "teacher",
 			"sessionToken" => $sessionToken,
 			"name" => $name]]);
