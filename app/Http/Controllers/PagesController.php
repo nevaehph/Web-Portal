@@ -40,7 +40,6 @@ class PagesController extends Controller
         $res = json_decode($response); 
         $classroomInfo = array();
         $i = 0;
-        //print_r($res);die;
         foreach ($res as $re => $value) {
             $classroomInfo[$i]["name"] = $value->name;
             $i++;

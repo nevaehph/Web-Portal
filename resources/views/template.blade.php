@@ -16,7 +16,6 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="{{ URL::asset('assets/js/bootstrap.min.js') }}"></script>
     <script src="{{ URL::asset('assets/js/loadingoverlay.min.js') }}"></script>
-    <script src="{{ URL::asset('assets/js/newclassroom.js') }}"></script>
     <script>
       $(document).ready(function() {
           $('#table').DataTable();
@@ -85,7 +84,7 @@
             </li>
             <li id="newClassroom"><a class="add-classroom" data-toggle="modal" data-target="#newClassRoomModal">Add a Classroom +</a></li>
 			@foreach($classroomInfo as $classroom)
-            <li><a class="add-classroom">{{$classroom['name']}}</a></li>
+            <li><a>{{$classroom['name']}}</a></li>
 			@endforeach
           </ul>
 

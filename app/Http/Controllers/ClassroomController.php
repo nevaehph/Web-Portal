@@ -45,7 +45,7 @@ class ClassroomController extends Controller
 		"sessionToken" => $request->session()->get('sessionToken'),
 		"name" => $name]]);
 		
-		return Redirect::action('ClassroomController@getClassroom');
+		return Redirect::action('PagesController@getDashboard');
 	}
 
     public function editClassroom(Request $request)
