@@ -36,14 +36,16 @@ class ClassroomController extends Controller
         return view('classroomManager',["classroomInfo" => $classroomInfo]);
     }
     
-    public function postNewClassroom(){
+    public function postNewClassroom(Request $request){
 		$name = $_POST['classroomName'];
 		$sessionToken = $_POST['sessionToken'];
-		$response = parent::post('getClassrooms', ['form_params' => [
+		
+		$response = parent::post('createClassrooms', ['form_params' => [
 		"teacherId" => "teacher",
-		"sessionToken" => $sessionToken,
+		"sessionToken" => $request->session()->get('sessionToken'),
 		"name" => $name]]);
-		return view('dashboard');
+		
+		return Redirect::action('ClassroomController@getClassroom');
 	}
 
     public function editClassroom(Request $request)
