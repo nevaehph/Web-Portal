@@ -84,6 +84,9 @@
                 <h4 style="margin-left:10px">Classroom(s)</h4>
             </li>
             <li id="newClassroom"><a class="add-classroom" data-toggle="modal" data-target="#newClassRoomModal">Add a Classroom +</a></li>
+			@foreach($classroomInfo as $classroom)
+            <li><a class="add-classroom">{{$classroom['name']}}</a></li>
+			@endforeach
           </ul>
 
           <ul class="nav nav-sidebar" id="topicList" data-session="{{Session::get('sessionToken')}}">

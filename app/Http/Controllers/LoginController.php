@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class LoginController extends Controller
 {
@@ -24,6 +25,7 @@ class LoginController extends Controller
             ]
         ]);
         $request->session()->put('sessionToken', trim($response, "\""));
-        return view('/dashboard');
+        return Redirect::action('PagesController@getDashboard');
+
     }
 }

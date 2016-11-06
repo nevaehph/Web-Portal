@@ -11,13 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('login');
-});
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
+Route::get('/', 'PagesController@getlogin');
+
+Route::get('/dashboard', 'PagesController@getDashboard');
 
 Route::get('/classroomManager', 'ClassroomController@getClassroom');
 
@@ -27,19 +24,10 @@ Route::post('/editClassroom', 'ClassroomController@editClassroom');
 
 Route::post('classroomController', 'ClassroomController@postNewClassroom');
 
-Route::get('/chapter', function(){
-	return view('chapter');
-});
-
-
-
+Route::get('/chapter', 'PagesController@getChapter');
 
 Route::post('/doLogin', 'LoginController@login');
 
-Route::get('/performanceReport', function(){
-	return view('performanceReport');
-});
+Route::get('/performanceReport', 'PagesController@getPerformanceReport');
 
-Route::get('/performanceReportDetail', function(){
-	return view('performanceReportDetail');
-});
+Route::get('/performanceReportDetail', 'PagesController@getPerformanceReportDetail');
