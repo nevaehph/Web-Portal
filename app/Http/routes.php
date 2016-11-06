@@ -29,7 +29,7 @@ Route::get('/chapter', function(){
 	return view('chapter');
 });
 
-Route::post('classroomController', 'NewClassroomController@postNewClassroom');
+Route::post('classroomController', 'ClassroomController@postNewClassroom');
 
 
 Route::post('/doLogin', 'LoginController@login');
