@@ -10,14 +10,23 @@
 			if (sameName) {
 				alert("A classroom with the name " + text + " already exists, please choose a different name");
 				flag = false;
+				
 			}
 		});
+		
+		
 		
 		//Adds new classroom if name is not already used
 		if (flag) {
 			$("#newClassRoomModal").modal('toggle');	
-			$("#classroomList").append("<li class=\"classrooms\"><a  href=\"/classroom\">" + classroomName + "</a></li>");	
-			return false;
+			$("#classroomList").append("<li class=\"classrooms\"><a  href=\"/classroom\">" + classroomName + "</a></li>");		
+		
+		}
+		else {
+			$("NewClassroomForm").submit(function(e){
+				e.preventDefault();
+			});
 		}	
-		return false;
+		
+		
 	}

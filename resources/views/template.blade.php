@@ -117,7 +117,7 @@
 			<h4 class="modal-title">Add a new classroom</h4>
 		  </div>
 			  <div class="modal-body">
-				{!! Form::open(['url' => '/classroomController', 'onsubmit' => 'retrieveNewClassData()']) !!} 
+				{!! Form::open(['url' => '/classroomController',  'id' => "NewClassroomForm"]) !!} 
 				
 				{{ Form::label("classroom", null, ['class' => 'form-control-label']) }}
 				{{ Form::text('classroomName', null, ['class' => 'form-control', 'id' => 'classRoomName']) }}
@@ -125,12 +125,10 @@
 				
 			</div>
 			  <div class="modal-footer">
-				  
-				{{ Form::button('Cancel', ['class' => 'btn btn-secondary', 'data-dismiss' => 'modal']) }}
-				{{ Form::submit('Add Classroom', ['class' => 'btn btn-primary']) }}
+				{{ Form::button('Cancel', ['class' => 'btn btn-secondary',  'data-dismiss' => 'modal']) }}
+				{{ Form::submit('Add Classroom', ['onclick' => 'retrieveNewClassData()', 'class' => 'btn btn-primary']) }}
 			  </div>
 			  {!! Form::close() !!}
-
 		</div>
 	  </div>
 	</div>

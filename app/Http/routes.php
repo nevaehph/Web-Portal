@@ -25,11 +25,13 @@ Route::post('/deleteClassroom', 'ClassroomController@deleteClassroom');
 
 Route::post('/editClassroom', 'ClassroomController@editClassroom');
 
+Route::post('classroomController', 'ClassroomController@postNewClassroom');
+
 Route::get('/chapter', function(){
 	return view('chapter');
 });
 
-Route::post('classroomController', 'ClassroomController@postNewClassroom');
+
 
 
 Route::post('/doLogin', 'LoginController@login');
