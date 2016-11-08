@@ -1,8 +1,11 @@
 # Software Parade - Web Portal
 ## Setting Up
 Download this repo
+
 Ensure that `composer` is installed and execute `composer update`
+
 Ensure that `php` is installed and added to environment path
+
 To start the server execute, `php artisan serve`
 
 ##Explanation of Folder Structure
