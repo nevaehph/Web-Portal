@@ -18,25 +18,11 @@ class PagesController extends Controller
     
 	
 	public function getlogin (){
-		$classroomInfo = null;
-		return view('login', ["classroomInfo" => $classroomInfo]);
+		return view('login');
 	}
 
-	public function getDashboard (Request $request){
-		$response = parent::post('getClassrooms', ['form_params' => 
-            [
-                "teacherId" => "teacher", //$request->session()->get('teacherId'), // TODO: add teacherId into session
-                "sessionToken" => $request->session()->get('sessionToken')
-            ]
-        ]);
-        $res = json_decode($response); 
-        $classroomInfo = array();
-        $i = 0;
-        foreach ($res as $re => $value) {
-            $classroomInfo[$i]["name"] = $value->name;
-            $i++;
-        }		
-		return view('dashboard', ["classroomInfo" => $classroomInfo]);
+	public function getDashboard (){	
+		return view('dashboard');
 	}
 
 }

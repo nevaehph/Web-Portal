@@ -28,3 +28,7 @@ Route::get('/topic/{topicId}', 'TopicController@getTopic');
 Route::get('/question/{questionId}', 'TopicController@getQuestion');
 
 Route::post('/doLogin', 'LoginController@login');
+
+Route::get('/classroom/{classroomId}', 'ResultController@displayClassroom');
+
+Route::get('/studentScore/{topicId}/{facebookId}/{studentName}', 'ResultController@getStudentAttemptByTopic');

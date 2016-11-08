@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;;
 use Illuminate\Support\Facades\Redirect;
+
+use App\Model\Topic;
 
 class TopicController extends Controller
 {
@@ -17,17 +18,10 @@ class TopicController extends Controller
      */
 
     public function getTopic(Request $request, $topicId) {
-        $response = parent::post('getTopicQuestionsWithStats', ['form_params' => 
-            [
-                "teacherId" => "teacher",
-                "sessionToken" => $request->session()->get('sessionToken'),
-                "topicId" => $topicId
-            ]
-        ]);
-        $res = json_decode($response); 
+        $res = Topic::getQuestionsWithStats('teacher', $topicId);
         $topicQuestions = array();
         $i = 0;
-        foreach ($res as $re => $value) {
+        foreach ($res->questionStats as $re => $value) {
             $topicQuestions[$i]["questionId"] = $value->questionId;
             $topicQuestions[$i]["questionText"] = $value->questionText;
             $topicQuestions[$i]["noStudentsAttempted"] = $value->noStudentsAttempted;
@@ -35,18 +29,11 @@ class TopicController extends Controller
             $topicQuestions[$i]["percentageCorrect"] = $value->percentageCorrect;
             $i++;
         }
-        return view('performanceReport',["topicQuestions" => $topicQuestions]);
+        return view('performanceReport',["topicQuestions" => $topicQuestions, "topicName" => $res->topicName]);
     }
 
     public function getQuestion(Request $request, $questionId) {
-        $response = parent::post('getQuestionOptionsStats', ['form_params' => 
-            [
-                "teacherId" => "teacher",
-                "sessionToken" => $request->session()->get('sessionToken'),
-                "questionId" => $questionId
-            ]
-        ]);
-        $res = json_decode($response); 
+        $res = Topic::getQuestionOptions('teacher', $questionId);
         return view('performanceReportDetail',["questionDetails" => $res]);
     }
 }

@@ -30,8 +30,6 @@
       </tbody>
     </table>
   </div>
-  <div><a href="/performanceReport">Back</a></div>
-  </div>
 </div>
 </div>
 @endsection

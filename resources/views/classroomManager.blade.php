@@ -4,31 +4,31 @@
   <h1 class="page-header">Classroom Manager</h1>
   <div>
     <div class="table-responsive">
-    <table id="table" class="table table-striped">
-      <thead>
-        <tr>
-          <th>Classroom ID</th>
-          <th>Classroom Name</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-      @foreach($classroomInfo as $classroom)
-        <tr>
-          <td>{{$classroom['classroomId']}}</td>
-          <td>{{$classroom['name']}}</td>
-          <td>
-            <button class="btn btn-primary" data-toggle="modal" data-target="#editModal" data-classroomId="{{$classroom['classroomId']}}" data-name="{{$classroom['name']}}">Edit</button>
-            <form action="/deleteClassroom" method="post" style="display: inline" onsubmit="return isConfirm()">
-            {{ csrf_field() }}
-              <button type="submit" id="btn-del-classroom" name="classroomId" class="btn btn-danger" value="{{$classroom['classroomId']}}">Delete</button>
-            </form>
-          </td>
-        </tr>
-      @endforeach
-      </tbody>
-    </table>
-  </div>
+      <table id="table" class="table table-striped">
+        <thead>
+          <tr>
+            <th>Classroom ID</th>
+            <th>Classroom Name</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+        @foreach($classroomInfo as $classroom)
+          <tr>
+            <td>{{$classroom['classroomId']}}</td>
+            <td>{{$classroom['name']}}</td>
+            <td>
+              <button class="btn btn-primary" data-toggle="modal" data-target="#editModal" data-classroomId="{{$classroom['classroomId']}}" data-name="{{$classroom['name']}}">Edit</button>
+              <form action="/deleteClassroom" method="post" style="display: inline" onsubmit="return isConfirm()">
+              {{ csrf_field() }}
+                <button type="submit" id="btn-del-classroom" name="classroomId" class="btn btn-danger" value="{{$classroom['classroomId']}}">Delete</button>
+              </form>
+            </td>
+          </tr>
+        @endforeach
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
 

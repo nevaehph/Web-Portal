@@ -28,7 +28,7 @@
             },
             success: function(data) {
               $.each(JSON.parse(data), function(index, value) {
-                $("#newClassroom").before("<li class=\"classrooms\"><a  href=\"\">" + value.name + "</a></li>");
+                $("#newClassroom").before("<li class=\"classrooms\"><a  href=\"/classroom/"+ value.classroomId +"\">" + value.name + "</a></li>");
               });
             }
           })
